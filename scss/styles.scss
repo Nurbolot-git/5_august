@@ -1,8 +1,85 @@
-$successColore:rgb(20, 50, 185);
-$textcolor:red;
+$primaryColor: #007bff;
+$successColor: #28a745;
 
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+@mixin backgroundColor($color) {
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color;
+  }
+}
+@mixin pad-y($value) {
+  padding: {
+    top: $value;
+    bottom: $value;
+  }
+}
+@mixin pad-x($value) {
+  padding: {
+    left: $value;
+    right: $value;
+  }
+}
+@mixin btn-shadow($color) {
+  box-shadow: 0 3px 1px rgba($color, 0.6);
+}
 
-body{
-    color:$textcolor;
-    background-color:$successColore;    
+// --------start----------------------//
+.navbar {
+  padding: 0;
+  .nav {
+    &-item {
+      height: 100%;
+      border-right: 1px solid black;
+      &:first-child {
+        border-left: 1px solid rgb(8, 8, 8);
+      }
+      @include backgroundColor(#11141a);
+    }
+    &-link {
+      color: #ffff !important;
+      @include pad-x(0.5rem);
+      @include pad-y(1rem);
+      &:hover,
+      &:focus,
+      &:active {
+        color: #ffff;
+      }
+      .icon {
+        padding-right: 5px;
+      }
+    }
+  }
+}
+.banner {
+  @include pad-y(8rem);
+  background-image: url(../img/bcity.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+  color: #ffff;
+  &-title {
+    font-weight: 700;
+  }
+  &-content {
+    @include pad-x(17rem);
+  }
+}
+
+.btn {
+  @include pad-y(10px);
+  @include pad-x(30px);
+  @include btn-shadow($primaryColor);
+  &-success {
+    @include btn-shadow($successColor);
+  }
 }
