@@ -1,0 +1,39 @@
+.navbar {
+  @include tablet {
+    display: block;
+    justify-content: flex-end;
+  }
+  padding: 0;
+  .nav {
+    &-item {
+      height: 100%;
+      border-right: 1px solid rgb(8, 8, 8);
+      &:first-child {
+        border-left: 1px solid rgb(8, 8, 8);
+      }
+      @include onHover() {
+        background-color: rgb(8, 8, 8);
+      }
+    }
+    &-link {
+      color: $lightColor !important;
+      @include pad-x(0.5rem);
+      @include pad-y(1rem);
+      &:hover,
+      &:focus,
+      &:active {
+        color: $darkColor;
+      }
+      .icon {
+        padding-right: 5px;
+      }
+    }
+  }
+
+  .light {
+    color: $lightColor;
+  }
+  .dark {
+    color: $lightColor;
+  }
+}

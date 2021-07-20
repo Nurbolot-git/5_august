@@ -1,0 +1,65 @@
+footer {
+  background-color: $darkColor;
+  color: $lightColor;
+  a {
+    color: $grayColor;
+    text-decoration: none;
+    list-style: none;
+    @include onHover() {
+      color: $lightColor;
+    }
+  }
+
+  .social_links {
+    ul {
+      list-style: none;
+      li {
+        display: inline-block;
+        margin-left: 10px;
+        a {
+          color: $lightColor;
+          font-size: 20px;
+          text-decoration: none;
+          // @include onHover() {
+          //   text-decoration: none;
+          // }
+
+          i {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            @include onHover() {
+              border-radius: 50%;
+            }
+            &.fa-whatsapp {
+              @include onHover() {
+                background-color: $successColor;
+              }
+            }
+            &.fa-twitter {
+              @include onHover() {
+                background-color: $primaryColor;
+              }
+            }
+            &.fa-facebook {
+              @include onHover() {
+                background-color: $primaryColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .menu {
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+      }
+    }
+  }
+}

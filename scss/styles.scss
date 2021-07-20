@@ -1,8 +1,10 @@
 $primaryColor: #007bff;
 $successColor: #28a745;
-$darkColor: #000000;
 $grayColor: #8e959c;
-
+$darkColor: #000000;
+$lightColor: #ffff;
+// $darkColor: rgba(247, 240, 240, 0); //for mode
+// $lightColor: #000000; //for mode
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -12,143 +14,14 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
+a {
+  text-decoration: none !important;
+}
 .container-fluid {
   padding: 0 !important;
 }
-@mixin onHover() {
-  &:hover,
-  &:focus,
-  &:active {
-    @content;
-  }
-}
-@mixin pad-y($value) {
-  padding: {
-    top: $value;
-    bottom: $value;
-  }
-}
-@mixin pad-x($value) {
-  padding: {
-    left: $value;
-    right: $value;
-  }
-}
-@mixin btn-shadow($color) {
-  box-shadow: 0 3px 1px rgba($color, 0.6);
-}
-
-// --------start----------------------//
-.navbar {
-  padding: 0;
-  .nav {
-    &-item {
-      height: 100%;
-      border-right: 1px solid black;
-      &:first-child {
-        border-left: 1px solid rgb(8, 8, 8);
-      }
-      @include onHover() {
-        background-color: #11141a;
-      }
-    }
-    &-link {
-      color: #ffff !important;
-      @include pad-x(0.5rem);
-      @include pad-y(1rem);
-      &:hover,
-      &:focus,
-      &:active {
-        color: #ffff;
-      }
-      .icon {
-        padding-right: 5px;
-      }
-    }
-  }
-}
-.banner {
-  @include pad-y(8rem);
-  background-image: url(../img/bcity.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.7;
-  color: #ffff;
-  &-title {
-    font-weight: 700;
-  }
-  &-content {
-    @include pad-x(17rem);
-  }
-}
-
-.btn {
-  @include pad-y(10px);
-  @include pad-x(30px);
-  @include btn-shadow($primaryColor);
-  &-success {
-    @include btn-shadow($successColor);
-  }
-}
-.bg-dark {
-  background-color: $darkColor;
-}
-
-footer {
-  color: white;
-  .nav-link,
-  span,
-  a {
-    color: $grayColor;
-    text-decoration: none;
-    @include onHover() {
-      color: white;
-    }
-  }
-
-  .social_links {
-    ul {
-      list-style: none;
-      li {
-        display: inline-block;
-        margin-left: 10px;
-        a {
-          color: white;
-          font-size: 20px;
-          text-decoration: none;
-          // @include onHover() {
-          //   text-decoration: none;
-          // }
-
-          i {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            @include onHover() {
-              border-radius: 50%;
-            }
-            &.fa-whatsapp {
-              @include onHover() {
-                background-color: #25d366;
-              }
-            }
-            &.fa-twitter {
-              @include onHover() {
-                background-color: #1da1f2;
-              }
-            }
-            &.fa-facebook {
-              @include onHover() {
-                background-color: #4267b2;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+@import "./mixins.scss";
+@import "./navbar.scss";
+@import "./posts.scss";
+@import "./ui-elements.scss";
+@import "./footer.scss";

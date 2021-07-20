@@ -1,0 +1,38 @@
+.banner {
+  @include pad-y(8rem);
+  background-image: url(../img/bcity.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+  color: $lightColor;
+  &-title {
+    font-weight: 700;
+  }
+  &-content {
+    @include pad-x(15px);
+    @include desktop {
+      @include pad-x(17rem);
+    }
+  }
+}
+
+.btn {
+  @include pad-y(10px);
+  @include pad-x(30px);
+
+  &-primary {
+    @include btn-initial($primaryColor);
+  }
+  &-success {
+    @include btn-initial($successColor);
+  }
+}
+.bg-dark {
+  background-color: $darkColor;
+}
+
+.row {
+  img {
+    @include pad-x(5px);
+  }
+}

@@ -1,0 +1,54 @@
+@mixin onHover() {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+@mixin pad-y($value) {
+  padding: {
+    top: $value;
+    bottom: $value;
+  }
+}
+@mixin pad-x($value) {
+  padding: {
+    left: $value;
+    right: $value;
+  }
+}
+@mixin btn-initial($color) {
+  background-color: $color;
+  border-color: $color;
+  box-shadow: 0 3px 1px rgba($color, 0.6);
+  @include onHover() {
+    background-color: darken($color, 10%);
+    border-color: darken($color, 10%);
+  }
+}
+
+@mixin card-initial() {
+  @mixin onHover() {
+    box-shadow: 0 3px 1px rgba($color, 0.6);
+  }
+}
+
+$tablet-width: 768 px;
+$desktop-width: 1024 px;
+
+@mixin phone {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-width) and (max-width: #{$desktop-width - 1 }) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
