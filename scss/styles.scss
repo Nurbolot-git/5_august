@@ -16,6 +16,7 @@ html {
 }
 a {
   text-decoration: none !important;
+  color: $darkColor;
 }
 .container-fluid {
   padding: 0 !important;
@@ -25,3 +26,4 @@ a {
 @import "./posts.scss";
 @import "./ui-elements.scss";
 @import "./footer.scss";
+@import "./post_ditail.scss";

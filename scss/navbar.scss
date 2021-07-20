@@ -30,10 +30,14 @@
     }
   }
 
-  .light {
-    color: $lightColor;
-  }
-  .dark {
-    color: $lightColor;
+  .mode {
+    &_light {
+      color: $lightColor;
+      display: block;
+    }
+    &_dark {
+      display: none;
+      color: $lightColor;
+    }
   }
 }

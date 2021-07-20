@@ -28,7 +28,7 @@
 }
 
 @mixin card-initial() {
-  @mixin onHover() {
+  @include onHover() {
     box-shadow: 0 3px 1px rgba($color, 0.6);
   }
 }

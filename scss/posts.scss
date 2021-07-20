@@ -1,5 +1,12 @@
 .row {
   padding: 3px;
 }
-@include desktop {
+.featured {
+  & span {
+    padding-left: 10px;
+  }
+  @include pad-y(5px);
+  &_item {
+    margin: 0 !important;
+  }
 }
